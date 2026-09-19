@@ -17,7 +17,7 @@ if (reducedMotion) {
   scenes.forEach((scene) => sceneObserver.observe(scene));
 }
 
-// Smooth spring scroll with gentle section snapping — desktop pointer only.
+// Smooth spring scroll with gentle section snapping, desktop pointer only.
 // Touch devices (the browsers that already broke twice on this project) keep
 // plain native scrolling, untouched. Degrades silently if the CDN fails.
 const isDesktopPointer = window.matchMedia('(pointer: fine) and (min-width: 901px)').matches;
@@ -46,26 +46,33 @@ if (!reducedMotion && isDesktopPointer && typeof window.Lenis !== 'undefined') {
 
   const snapTargets = Array.from(document.querySelectorAll('.scene, .case-scene'));
   let isSnapping = false;
-  let settleTimer = null;
 
-  lenis.on('scroll', () => {
+  function trySnap() {
     if (isSnapping) return;
-    clearTimeout(settleTimer);
-    settleTimer = setTimeout(() => {
-      const current = window.scrollY;
-      let nearest = null;
-      let nearestDistance = Infinity;
-      snapTargets.forEach((section) => {
-        const distance = Math.abs(section.offsetTop - current);
-        if (distance < nearestDistance) {
-          nearestDistance = distance;
-          nearest = section;
-        }
-      });
-      if (nearest && nearestDistance > 4 && nearestDistance < window.innerHeight * 0.6) {
-        isSnapping = true;
-        lenis.scrollTo(nearest, { duration: 0.9, easing: ease, onComplete: () => { isSnapping = false; } });
+    const current = window.scrollY;
+    let nearest = null;
+    let nearestDistance = Infinity;
+    snapTargets.forEach((section) => {
+      const distance = Math.abs(section.offsetTop - current);
+      if (distance < nearestDistance) {
+        nearestDistance = distance;
+        nearest = section;
       }
-    }, 160);
-  });
+    });
+    if (nearest && nearestDistance > 4 && nearestDistance < window.innerHeight * 0.6) {
+      isSnapping = true;
+      lenis.scrollTo(nearest, { duration: 0.9, easing: ease, onComplete: () => { isSnapping = false; } });
+    }
+  }
+
+  if ('onscrollend' in window) {
+    window.addEventListener('scrollend', trySnap);
+  } else {
+    let settleTimer = null;
+    lenis.on('scroll', () => {
+      if (isSnapping) return;
+      clearTimeout(settleTimer);
+      settleTimer = setTimeout(trySnap, 160);
+    });
+  }
 }
