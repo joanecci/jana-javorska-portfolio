@@ -44,7 +44,12 @@ if (!reducedMotion && isDesktopPointer && typeof window.Lenis !== 'undefined') {
     });
   });
 
-  const snapTargets = Array.from(document.querySelectorAll('.scene, .case-scene'));
+  // Snap points are plain scroll offsets, not elements, and 0 (page top, header
+  // visible) is one of them. Without it, any small scroll near the top would
+  // snap straight to the hero section's offsetTop, which sits just below the
+  // header, hiding it, exactly the Safari load-time bug this project already
+  // fixed once.
+  const snapPoints = [0, ...Array.from(document.querySelectorAll('.scene, .case-scene')).map((el) => el.offsetTop)];
   let isSnapping = false;
 
   function trySnap() {
@@ -52,14 +57,14 @@ if (!reducedMotion && isDesktopPointer && typeof window.Lenis !== 'undefined') {
     const current = window.scrollY;
     let nearest = null;
     let nearestDistance = Infinity;
-    snapTargets.forEach((section) => {
-      const distance = Math.abs(section.offsetTop - current);
+    snapPoints.forEach((point) => {
+      const distance = Math.abs(point - current);
       if (distance < nearestDistance) {
         nearestDistance = distance;
-        nearest = section;
+        nearest = point;
       }
     });
-    if (nearest && nearestDistance > 4) {
+    if (nearest !== null && nearestDistance > 4) {
       isSnapping = true;
       lenis.scrollTo(nearest, { duration: 0.9, easing: ease, onComplete: () => { isSnapping = false; } });
     }
