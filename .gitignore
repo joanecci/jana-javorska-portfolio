@@ -1,0 +1,6 @@
+.agents/
+.claude/
+skills-lock.json
+CLAUDE_CODE_HANDOFF.md
+design-system/
+.DS_Store
