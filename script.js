@@ -59,20 +59,16 @@ if (!reducedMotion && isDesktopPointer && typeof window.Lenis !== 'undefined') {
         nearest = section;
       }
     });
-    if (nearest && nearestDistance > 4 && nearestDistance < window.innerHeight * 0.6) {
+    if (nearest && nearestDistance > 4) {
       isSnapping = true;
       lenis.scrollTo(nearest, { duration: 0.9, easing: ease, onComplete: () => { isSnapping = false; } });
     }
   }
 
-  if ('onscrollend' in window) {
-    window.addEventListener('scrollend', trySnap);
-  } else {
-    let settleTimer = null;
-    lenis.on('scroll', () => {
-      if (isSnapping) return;
-      clearTimeout(settleTimer);
-      settleTimer = setTimeout(trySnap, 160);
-    });
-  }
+  let settleTimer = null;
+  lenis.on('scroll', () => {
+    if (isSnapping) return;
+    clearTimeout(settleTimer);
+    settleTimer = setTimeout(trySnap, 160);
+  });
 }
