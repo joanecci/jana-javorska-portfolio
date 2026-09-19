@@ -13,7 +13,7 @@
 }
 
 * { box-sizing: border-box; }
-html { background: var(--paper); scroll-behavior: smooth; scroll-snap-type: y proximity; }
+html { background: var(--paper); scroll-behavior: smooth; }
 body { margin: 0; color: var(--ink); background: var(--paper); font: 400 16px/1.55 var(--system); overflow-x: hidden; }
 img { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
@@ -30,7 +30,7 @@ a:focus-visible { outline: 3px solid var(--red); outline-offset: 5px; }
 .site-header nav a:hover, .header-contact:hover, .quiet-link:hover, .contact-details a:hover, .site-footer a:hover { color: var(--red); }
 .header-contact { font-size: 13px; font-weight: 600; }
 
-.scene { width: var(--page); margin: 0 auto; min-height: 72vh; padding: clamp(100px, 12vw, 184px) 0; scroll-margin-top: 28px; scroll-snap-align: start; }
+.scene { width: var(--page); margin: 0 auto; min-height: 72vh; padding: clamp(100px, 12vw, 184px) 0; scroll-margin-top: 28px; }
 .hero { min-height: calc(100vh - 96px); display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(360px, .92fr); align-items: center; gap: clamp(46px, 8vw, 132px); padding-top: clamp(72px, 9vw, 132px); position: relative; }
 .hero-copy { max-width: 690px; }
 .kicker { margin: 0 0 24px; color: var(--muted); font-size: 11px; letter-spacing: .02em; }
@@ -199,7 +199,7 @@ html.js:not(.gsap-driven) .case-scene.is-in .case-media {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; scroll-snap-type: none; }
+  html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .js .scene-copy, .js .scene-media, .js .case-meta, .js .case-media { opacity: 1; transform: none; }
   .js .media-core { transform: none; }
