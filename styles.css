@@ -126,15 +126,10 @@ blockquote cite { display: block; margin-top: 21px; color: var(--muted); font: 4
 
 .js .scene-copy, .js .scene-media, .js .case-meta, .js .case-media { opacity: 0; transform: translateY(22px); }
 
-/* Plain-CSS reveal: the default engine, and the fallback if GSAP fails to load.
-   Suppressed by html.gsap-driven, which lets script.js animate the same end state
-   itself with nicer easing/stagger instead of fighting this transition for it. */
-html.js:not(.gsap-driven) .scene.is-in .scene-copy,
-html.js:not(.gsap-driven) .case-scene.is-in .case-meta {
+.scene.is-in .scene-copy, .case-scene.is-in .case-meta {
   opacity: 1; transform: none; transition: opacity .9s ease, transform 1.05s var(--spring);
 }
-html.js:not(.gsap-driven) .scene.is-in .scene-media,
-html.js:not(.gsap-driven) .case-scene.is-in .case-media {
+.scene.is-in .scene-media, .case-scene.is-in .case-media {
   opacity: 1; transform: none; transition: opacity 1s ease .1s, transform 1.3s var(--spring) .1s;
 }
 
