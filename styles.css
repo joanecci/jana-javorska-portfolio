@@ -19,7 +19,7 @@
 }
 
 * { box-sizing: border-box; }
-html { background: var(--paper); scroll-behavior: smooth; scroll-snap-type: y mandatory; }
+html { background: var(--paper); scroll-behavior: smooth; }
 body { margin: 0; color: var(--ink); background: var(--paper); font: 400 16px/1.55 var(--system); overflow-x: hidden; }
 img { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
@@ -28,7 +28,7 @@ a:focus-visible { outline: 3px solid var(--red); outline-offset: 5px; }
 .skip-link { position: fixed; left: 16px; top: 16px; z-index: 5; padding: 10px 14px; color: #fff; background: var(--ink); transform: translateY(-150%); transition: transform var(--dur-quick) var(--spring); }
 .skip-link:focus-visible { transform: translateY(0); }
 
-.site-header { width: var(--page); height: 96px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); scroll-snap-align: start; }
+.site-header { width: var(--page); height: 96px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
 .wordmark { font: italic 500 25px/1 var(--serif); letter-spacing: 0; }
 .wordmark span { margin-left: 3px; color: var(--red); }
 .site-header nav { display: flex; gap: 32px; color: var(--muted); font-size: 13px; }
@@ -36,7 +36,7 @@ a:focus-visible { outline: 3px solid var(--red); outline-offset: 5px; }
 .site-header nav a:hover, .header-contact:hover, .quiet-link:hover, .contact-details a:hover, .site-footer a:hover { color: var(--red); }
 .header-contact { font-size: 13px; font-weight: 600; }
 
-.scene { width: var(--page); margin: 0 auto; min-height: 72vh; padding: clamp(100px, 12vw, 184px) 0; scroll-margin-top: 28px; scroll-snap-align: start; }
+.scene { width: var(--page); margin: 0 auto; min-height: 72vh; padding: clamp(100px, 12vw, 184px) 0; scroll-margin-top: 28px; }
 .hero { min-height: calc(100vh - 96px); display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(360px, .92fr); align-items: center; gap: clamp(46px, 8vw, 132px); padding-top: clamp(72px, 9vw, 132px); position: relative; }
 .hero-copy { max-width: 690px; }
 .kicker { margin: 0 0 24px; color: var(--muted); font-size: 11px; letter-spacing: .02em; }
@@ -129,7 +129,7 @@ blockquote cite { display: block; margin-top: 21px; color: var(--muted); font: 4
 .contact { position: relative; width: 100%; max-width: none; min-height: 760px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, 455px); gap: clamp(40px, 10vw, 170px); align-items: center; padding-right: max(36px, calc((100vw - 1180px) / 2)); padding-left: max(36px, calc((100vw - 1180px) / 2)); color: #fff; background: var(--ink); }
 .contact-copy { width: var(--page); max-width: 600px; justify-self: end; }
 .contact .kicker { color: #aaa; }
-.contact h2 { margin-bottom: 30px; font-size: clamp(68px, 10vw, 132px); line-height: .85; }
+.contact h2 { margin-bottom: 30px; font-size: clamp(68px, 10vw, 132px); line-height: .98; }
 .contact h2 span { color: var(--red); }
 .contact-copy > p:not(.kicker) { max-width: 360px; margin: 0 0 28px; color: #bbb; }
 .contact-media { width: min(100%, 455px); background: #282828; }
