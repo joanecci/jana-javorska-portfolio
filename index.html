@@ -9,13 +9,16 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="intro-splash" id="intro-splash" aria-hidden="true"><span>Jana Javorská</span></div>
+    <button class="intro-splash" id="intro-splash" type="button" aria-label="Vstúpiť na stránku Jany Javorskej">
+      <span class="splash-text">
+        <span class="splash-ink">Jana Javorská</span>
+        <span class="splash-red" aria-hidden="true">Jana Javorská</span>
+      </span>
+    </button>
     <a class="skip-link" href="#main">Preskočiť na obsah</a>
     <header class="site-header">
       <a class="wordmark" href="#top" aria-label="Jana Javorská, začiatok stránky">jana<span>J.</span></a>
       <nav aria-label="Hlavná navigácia">
-        <a href="#o-mne">O mne</a>
-        <a href="#sluzby">Služby</a>
         <a href="#praca">Práca</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
@@ -28,7 +31,7 @@
           <p class="kicker">social media manager / creator & strategist</p>
           <h1>Obsah, ktorý <span>zastaví scroll.</span></h1>
           <p class="lede">Vytváram obsah a stratégiu pre sociálne siete, ktoré menia sledovateľov na zákazníkov.</p>
-          <a class="scroll-hint" href="#o-mne" aria-label="Posunúť sa nižšie">
+          <a class="scroll-hint" href="#praca" aria-label="Posunúť sa nižšie">
             <svg viewBox="0 0 40 70" aria-hidden="true">
               <path d="M20,3 C17,18 23,32 19,48" />
               <path d="M7,40 C12,49 16,55 20,60 C25,55 30,47 33,39" />
@@ -41,28 +44,6 @@
           <figcaption>Praha / online</figcaption>
         </figure>
         <div class="hero-rule" aria-hidden="true"></div>
-      </section>
-
-      <section class="intro scene" id="o-mne" data-scene>
-        <div class="section-head scene-copy"><span>O mne</span></div>
-        <div class="intro-copy scene-copy">
-          <h2>Prepájam značky s ľuďmi, ktorí ich sledujú.</h2>
-          <p>Volám sa Jana. V agentúre som začínala ako social media manager pre pár klientov. Dnes sa ako juniorská marketérka starám o firemné projekty, a radosť mi robí aj spolupráca so skvelými klientmi.</p>
-          <p>Zaujíma ma vizuálna identita, stratégia a to, ako značka pôsobí v čase.</p>
-          <a class="quiet-link" href="mailto:joanecci.work@gmail.com">Spoznajme sa</a>
-        </div>
-        <figure class="media-frame intro-media scene-media">
-          <div class="media-core media-core-light"><img src="public/assets/portfolio/jana-002.png" alt="Portrét Jany Javorskej v čiernom svetri" width="717" height="960" loading="lazy" /></div>
-        </figure>
-      </section>
-
-      <section class="services scene" id="sluzby" data-scene>
-        <div class="section-head scene-copy"><span>Čo robím</span></div>
-        <div class="services-list scene-copy">
-          <article class="service-row"><span class="service-letter">A</span><div><h3>Social media management</h3><p>Prevezmem správu vašich sociálnych sietí, aby ste sa mohli venovať podnikaniu.</p></div><span class="service-type">stratégia</span></article>
-          <article class="service-row"><span class="service-letter">B</span><div><h3>Content creation</h3><p>Od fotenia a natáčania cez strih až po copy, ktoré má hlavu, pätu a vedie k akcii.</p></div><span class="service-type">produkcia</span></article>
-          <article class="service-row"><span class="service-letter">C</span><div><h3>UGC, ktoré pôsobí prirodzene</h3><p>Recenzie, unboxingy a how-to videá, ktorým ľudia veria.</p></div><span class="service-type">autenticita</span></article>
-        </div>
       </section>
 
       <section class="work scene" id="praca" data-scene>
@@ -92,24 +73,6 @@
           <div class="case-meta"><span>05</span><span>CzechYourWay</span><strong>výsledky pripravujeme</strong><p>Sociálne siete pre appku na výučbu češtiny, od obsahu po kampane. Čísla doplním, hneď ako budú.</p></div>
           <figure class="media-frame case-media"><div class="media-core"><img src="public/assets/portfolio/cyw-002.png" alt="Reklamný vizuál appky CzechYourWay na výučbu češtiny" width="1080" height="1350" loading="lazy" /></div></figure>
         </article>
-      </section>
-
-      <section class="content scene" data-scene>
-        <div class="section-head scene-copy"><span>Obsah pre značky</span></div>
-        <div class="content-lede scene-copy"><h2>Každý formát má svoj dôvod.</h2><p>Unboxing, aesthetic, showcase, testimonial aj voiceover, vždy podľa toho, čo sedí konkrétnej značke.</p></div>
-        <div class="content-grid scene-copy">
-          <figure class="media-frame content-tile content-tile-large"><div class="media-core"><img src="public/assets/portfolio/jana-010.png" alt="Video o hair care rutine" width="406" height="720" loading="lazy" /></div><figcaption>routine</figcaption></figure>
-          <figure class="media-frame content-tile"><div class="media-core"><img src="public/assets/portfolio/jana-021.png" alt="Edukativný produktový post pre kozmetickú značku" width="432" height="540" loading="lazy" /></div></figure>
-          <figure class="media-frame content-tile"><div class="media-core"><img src="public/assets/portfolio/jana-028.png" alt="Edukativný jazykový post" width="891" height="1114" loading="lazy" /></div></figure>
-        </div>
-      </section>
-
-      <section class="proof scene" data-scene>
-        <div class="section-head scene-copy"><span>Referencie</span></div>
-        <div class="proof-list scene-copy">
-          <blockquote>„Jana vie spojiť estetiku s premyslenou stratégiou. Pri spolupráci prináša pokoj, nápady a veci dotiahne.“<cite>Monika Hudová / marketingová manažérka</cite></blockquote>
-          <blockquote>„Je samostatná, kreatívna a vždy premýšľa, ako dať obsahu ďalší zmysel.“<cite>Andrea Janoušek Fryk / majiteľka Phric</cite></blockquote>
-        </div>
       </section>
 
       <section class="contact scene" id="kontakt" data-scene>
